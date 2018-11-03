@@ -1,5 +1,4 @@
 # dev-config
-development environment configurations for Ubuntu 18.10 (or similar)  
 The purpose of this repository is to provide a user a collection of steps to configure their development environment. Feel free to copy and/or use any/all of this!  
 
 # Update OS and existing SW 
