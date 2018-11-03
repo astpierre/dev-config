@@ -5,7 +5,13 @@ The purpose of this repository is to provide a user a collection of steps to con
 # Update OS and existing SW 
 ```sudo apt update && sudo apt upgrade -y```  
 # Aliases & prompts  
-I have a few aliases I have adopted from various sources that I cannot recall. They save time and keep  
+I have a few aliases I have adopted from various opensources that I cannot recall. Feel free to use. 
+```
+[bashrc](https://github.com/astpierre/dev-config/bashrc)  
+[bash_aliases](https://github.com/astpierre/dev-config/bash_aliases)  
+
+source bashrc
+```  
 
 # [git](https://git-scm.com/)  
 Install git and configure yourself as the global user.  
@@ -15,8 +21,7 @@ git config --global user.name "Andrew St. Pierre"
 git config --global user.email "astpier@purdue.edu"  
 ```  
 
-# Process management  
-## [htop](https://hisham.hm/htop/)  
+# [htop](https://hisham.hm/htop/)  
 I enjoy using ```htop``` instead of ```top``` to view system metrics and running processes. My Dad showed me this one, thanks Dad.  
 ```  
 sudo apt install htop  
