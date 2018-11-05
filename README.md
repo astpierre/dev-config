@@ -4,7 +4,7 @@ The purpose of this repository is to provide a user a collection of steps to con
 # Update OS and existing SW 
 ```sudo apt update && sudo apt upgrade -y```  
 # Aliases & prompts  
-I have a few aliases I have adopted from various opensources that I cannot recall. Feel free to use. 
+I have a few aliases I have adopted from various opensources that I cannot recall. Feel free to use. When creating a new prompt, I use [EZPrompt](ezprompt.net). 
 ```
 [bashrc](https://github.com/astpierre/dev-config/bashrc)  
 [bash_aliases](https://github.com/astpierre/dev-config/bash_aliases)  
