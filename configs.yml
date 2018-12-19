@@ -1,0 +1,27 @@
+packages:
+    - htop
+    - vim
+    - build-essential
+    - git
+    - gnome-tweak-tool
+    - python3
+    - curl
+    - virtualenv
+    - pip
+    - nodejs
+    - npm
+    - ruby-full
+    - atom
+
+dotfiles:
+    bashrc: https://raw.githubusercontent.com/astpierre/dev-config/master/bashrc
+    bash_aliases: https://raw.githubusercontent.com/astpierre/dev-config/master/bash_aliases
+
+vimrc:
+    clone: "git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime"s
+    addMouse: "echo "set mouse=a" >> .vimrc"
+    runit: "sh ~/.vim_runtime/install_awesome_vimrc.sh"
+
+theme:
+    source: " "
+    action1: "sudo cp -r Downloads/McOS-MJV-Dark-mode-1.1 ../../usr/share/themes/"
