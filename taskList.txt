@@ -1,0 +1,33 @@
+list of tasks
+sudo apt-get install -y gnome-tweak-tool
+dpkg --get-selections | grep gtk
+sudo cp Downloads/McOS-MJV-Dark-mode-1.1 ../../usr/share/themes/
+sudo cp -r Downloads/McOS-MJV-Dark-mode-1.1 ../../usr/share/themes/
+git clone https://github.com/astpierre/dev-config.git
+cd dev-config/
+cp ../.bashrc .
+.bashrc bashrc
+cp ../.bash_aliases .
+mv .bash_aliases bash_aliases
+source ./.bashrc
+
+
+git config --global user.email "astpier@purdue.edu"
+git config --global user.name "Andrew St. Pierre"
+git config --global color.ui auto
+
+
+gnome-tweak-tool --version
+sudo apt-get install -y gnome-tweak-tool
+
+vim --version
+sudo apt install vim
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+echo "set mouse=a" >> .vimrc
+
+git --version
+sudo apt install git
+
+python --version
+sudo apt install python3

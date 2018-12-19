@@ -1,0 +1,187 @@
+    1  sudo apt-get install -y gnome-tweak-tool
+    2  dpkg --get-selections | grep gtk
+    3  ls
+    4  la
+    5  sudo cp Downloads/McOS-MJV-Dark-mode-1.1 ../../usr/share/themes/
+    6  sudo cp -r Downloads/McOS-MJV-Dark-mode-1.1 ../../usr/share/themes/
+    7  clear
+    8  exit
+    9  ls
+   10  clear
+   11  ls
+   12  mkdir Documents
+   13  mv Downloads/stpierre_cv_personal.pdf Documents/
+   14  l
+   15  sudo apt-get updates
+   16  sudo apt-get update
+   17  ls
+   18  la
+   19  vim --version
+   20  sudo apt install vim
+   21  atom .bashrc &
+   22  source ./.bashrc
+   23  ls
+   24  c
+   25  l
+   26  git clone https://github.com/astpierre/dev-config.git
+   27  sudo apt install git
+   28  git clone https://github.com/astpierre/dev-config.git
+   29  l
+   30  cd dev-config/
+   31  l
+   32  cp ../.bashrc .
+   33  l
+   34  la
+   35  mv .bashrc bashrc
+   36  cp ../.bash_aliases .
+   37  mv .bash_aliases bash_aliases
+   38  l
+   39  cat bash_aliases
+   40  gac updating git add and commit alias
+   41  l
+   42  vim --version
+   43  c
+   44  l
+   45  atom bash_aliases
+   46  gac "updating git add and commit alias" .
+   47  ..
+   48  source .bashrc
+   49  cd dev-config/
+   50  gac "updating git add and commit alias" .
+   51  source ./../.bashrc
+   52  gac "updating git add and commit alias" .
+   53  git add *
+   54  l
+   55  git commit -m "updating aliasses" .
+   56  git config --global user.email "astpier@purdue.edu"
+   57  git config --global user.name "Andrew St. Pierre"
+   58  git commit -m "updating aliasses" .
+   59  git push
+   60  c
+   61  l
+   62  ..
+   63  l
+   64  c
+   65  l
+   66  vim-gnome
+   67  vim
+   68  c
+   69  exit
+   70  update
+   71  c
+   72  reboot
+   73  exit
+   74  ruby --version
+   75  python --version
+   76  sudo apt install python3
+   77  git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+   78  sh ~/.vim_runtime/install_awesome_vimrc.sh
+   79  l
+   80  v dev-config/bash_aliases
+   81  v dev-config/bashrc
+   82  l
+   83  rm -rf documents/
+   84  l
+   85  rm -rf Desktop/
+   86  l
+   87  c
+   88  l
+   89  pid
+   90  l
+   91  v .bashrc
+   92  source ./.bashrc
+   93  l
+   94  cd bin/
+   95  l
+   96  v hello.py
+   97  c
+   98  l
+   99  ..
+  100  cd bin/
+  101  l
+  102  chmod +x hello.py
+  103  l
+  104  ..
+  105  l
+  106  hello.py
+  107  c
+  108  cd Documents/
+  109  hello.py
+  110  ..
+  111  l
+  112  c
+  113  l
+  114  update
+  115  l
+  116  sudo apt install ruby-full
+  117  l
+  118  ruby --version
+  119  l
+  120  cd dev-config/
+  121  l
+  122  v bash_aliases
+  123  ..
+  124  v .bash_aliases
+  125  source .bashrc
+  126  cd dev-config/
+  127  gac updating git script
+  128  gac 'updating git script'
+  129  git pull
+  130  l
+  131  git status
+  132  git reset HEAD bash_aliases
+  133  l
+  134  c
+  135  ,,
+  136  ..
+  137  l
+  138  v .bash_aliases
+  139  l
+  140  c
+  141  gem --version
+  142  pip --version
+  143  npm --version
+  144  sudo apt install npm
+  145  l
+  146  rpm -qa|grep -i ruby
+  147  sudo apt install rpm
+  148  rpm -qa|grep -i ruby
+  149  ruby
+  150  ruby --version
+  151  gem --version
+  152  rbenv --version
+  153  c
+  154  l
+  155  gem install bundler
+  156  sudo gem install bundler
+  157  c
+  158  curl --version
+  159  sudo apt install curl
+  160  curl --version
+  161  c
+  162  sudo rvm implode
+  163  rvm
+  164  rbenv --version
+  165  c
+  166  sudo apt list --installed | less
+  167  sudo apt list --installed
+  168  sudo dpkg-query -l
+  169  sudo dpkg-query -f '${binary:Package}\n' -W | wc -l
+  170  man apt
+  171  sudo apt autoremove
+  172  sudo apt purge rvm
+  173  dpkg -l
+  174  sudo apt purge rpm
+  175  sudo apt autoremove
+  176  l
+  177  pip --version
+  178  dpkg-query
+  179  dpkg-query --help
+  180* dpkg-query -lc
+  181  c
+  182  dpkg-query --help
+  183  dpkg-query -l '${binary:Package}\n' -W | wc -l
+  184  dpkg-query -f '${binary:Package}\n' -W | wc -l
+  185  history
+  186  l
+  187  history > myHistory.txt
