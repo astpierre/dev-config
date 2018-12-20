@@ -17,7 +17,7 @@ import yaml
 
 # Global variables
 #-----------------------------------------------------------------------------
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 OPTIONS_FILE = "configs.yml"
 
 # System commands
@@ -211,9 +211,7 @@ def main(argv):
         # Parse and exec pre-actions
         for pckg in configs["packages"]:
             # TESTING WITH virtualenv and htop
-            command_uninstall = _APT_REMOVE+" "+pckg
             command_install = _APT_INSTALL+" "+pckg
-            showexec("Uninstall package "+pckg, command_uninstall)
             showexec("Install package "+pckg, command_install)
         # Update repos
         showexec ("Update repositories", _APT_UPDATE)
@@ -250,7 +248,7 @@ def main(argv):
     print(" => configuration file: "+config_file+"\n")
     print("Restart your session to complete.")
     if(getstring("Would you like to reboot now? (y/n)") == "y"):
-        os.system("shutdown /r /t 1")
+        os.system("reboot")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 

@@ -2,9 +2,7 @@ packages:
     - htop
     - vim
     - build-essential
-    - git
     - gnome-tweak-tool
-    - python3
     - curl
     - virtualenv
     - pip
@@ -18,8 +16,7 @@ dotfiles:
     bash_aliases: https://raw.githubusercontent.com/astpierre/dev-config/master/bash_aliases
 
 vimrc:
-    clone: "git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime"s
-    addMouse: "echo "set mouse=a" >> .vimrc"
+    clone: "git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime"
     runit: "sh ~/.vim_runtime/install_awesome_vimrc.sh"
 
 theme:
