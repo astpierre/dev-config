@@ -156,10 +156,10 @@ def getstring(message = "Enter a value: "):
     Ask user to enter a value
     """
     try:
-        input = raw_input
+        inpt = input(message)
     except:
         pass
-    return raw_input(message)
+    return inpt
 
 def waitenterpressed(message = "Press ENTER to continue..."):
     """
@@ -207,6 +207,7 @@ def main(argv):
         configs = yaml.load(fyaml)
 
     # Install all requested packages
+    '''
     if "packages" in configs:
         # Parse and exec pre-actions
         for pckg in configs["packages"]:
@@ -217,8 +218,9 @@ def main(argv):
         showexec ("Update repositories", _APT_UPDATE)
         # Upgrade system
         showexec ("System upgrade (takes a while, be patient...)", _APT_UPGRADE)
-
+    '''
     # Download the dotfiles from specified locations and use them
+    '''
     if "dotfiles" in configs:
         for df in configs["dotfiles"]:
             if df == "bashrc":
@@ -232,8 +234,9 @@ def main(argv):
                 showexec("Moving .bash_aliases into proper file...", "mv $HOME/.bash_aliases.bak $HOME/.bash_aliases")
             else: print("Unrecognized dotfile category: %s"%df)
         showexec("Running your new .bashrc script!", "source $HOME/.bashrc")
-
+    '''
     # Clone the vimrc settings into home dir and add mouse clicking too
+    '''
     if "vimrc" in configs:
         instr = configs["vimrc"]["clone"]
         showexec("Cloning the vim settings repo from github...", instr+" $HOME")
@@ -241,14 +244,15 @@ def main(argv):
             vmrc.write(configs["vimrc"]["addMouse"])
         instr = configs["vimrc"]["runit"]
         showexec("Implementing your new vim preferences...", instr)
-
+    '''
     # End of the script
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("End of the configuration script.")
     print(" => configuration file: "+config_file+"\n")
     print("Restart your session to complete.")
     if(getstring("Would you like to reboot now? (y/n)") == "y"):
-        os.system("reboot")
+        print("REBOOT COMMENTED OUT...")
+        #os.system("reboot")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 

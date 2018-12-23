@@ -1,16 +1,3 @@
-packages:
-    - htop
-    - vim
-    - build-essential
-    - gnome-tweak-tool
-    - curl
-    - virtualenv
-    - pip
-    - nodejs
-    - npm
-    - ruby-full
-    - atom
-
 dotfiles:
     bashrc: https://raw.githubusercontent.com/astpierre/dev-config/master/bashrc
     bash_aliases: https://raw.githubusercontent.com/astpierre/dev-config/master/bash_aliases
