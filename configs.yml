@@ -1,3 +1,15 @@
+packages:
+    - htop
+
+packagestmp:
+    - htop
+    - vim
+    - build-essential
+    - gnome-tweak-tool
+    - python3
+    - curl
+    - pip3
+
 dotfiles:
     bashrc: https://raw.githubusercontent.com/astpierre/dev-config/master/bashrc
     bash_aliases: https://raw.githubusercontent.com/astpierre/dev-config/master/bash_aliases
