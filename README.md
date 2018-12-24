@@ -1,8 +1,8 @@
 # dev-config
 The purpose of this repository is to provide a collection personal preferences and tools that compose my development environment. Feel free to copy and/or use any/all of this!
 
-## The automated method [RECOMMENDED]
-I wrote a small python script to automate most of the process. The script depends on one non-standard Python 3 package, colorama. You should install this package prior to executing the development configuration program.
+## Automated setup
+I wrote a python script to automate most of the process. The script depends on one non-standard Python 3 package, colorama. You should install this package prior to executing the development configuration program.
 ### Getting started
 1. Install git, ```sudo apt install git```  
 2. Clone the repository, ```git clone https://github.com/astpierre/dev-config.git```  
@@ -11,8 +11,10 @@ I wrote a small python script to automate most of the process. The script depend
 5. Respond to prompt as requested and reboot to see effects.  
 
 
-## Manual development environment setup
-### Update OS and existing SW
+## How it works
+### Adjust the YAML fields   
+To use the Python script for your own usage, you need to alter the YAML file.
+I tried to make the fields as simple as possible, but I am not sure
 ```sudo apt update && sudo apt upgrade -y```  
 ### Aliases & prompts  
 I have a few aliases I have adopted from various opensources that I cannot recall. Feel free to use. When creating a new prompt, I use [EZPrompt](ezprompt.net).
