@@ -193,6 +193,9 @@ def waitenterpressed(message = "Press ENTER to continue..."):
     return 0
 
 def doPackages(configs):
+    getchrome = "wget -O $HOME/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+    installchrome="dpkg -i google-chrome-stable_current_amd64.deb"
+    showexec ("Installing Google Chrome", installchrome)
     # Install all requested packages
     if "packages" in configs:
         # Parse and exec pre-actions
@@ -200,6 +203,7 @@ def doPackages(configs):
             # TESTING WITH virtualenv and htop
             command_install = _APT_INSTALL+" "+pckg
             showexec("Install package "+pckg, command_install)
+
         # Update repos
         showexec ("Update repositories", _APT_UPDATE)
         # Upgrade system
