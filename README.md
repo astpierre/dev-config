@@ -6,7 +6,7 @@ I wrote a small python script to automate most of the process. The script depend
 ### Getting started
 1. Install git, ```sudo apt install git```  
 2. Clone the repository, ```git clone https://github.com/astpierre/dev-config.git```  
-3. Execute ```python3 setup.py```
+3. Install the requirements ```pip3 install -r requirements.txt```
 4. Run the program as root user ```sudo python3 dev_config.py```  
 5. Respond to prompt as requested and reboot to see effects.  
 

@@ -10,8 +10,6 @@ import sys
 import platform
 import getopt
 import shutil
-import logging
-import getpass
 import yaml
 import colorama
 import time
@@ -67,6 +65,8 @@ def init():
     """
     # Globals variables
     global VERSION
+    command = "clear"
+    returncode = os.system("/bin/sh -c \"%s\" >> /dev/null 2>&1" % command)
 
 def syntax():
     """
@@ -149,22 +149,6 @@ def showexec(description, command, exitonerror = 0, presskey = 0, waitmessage = 
     if ((returncode != 0) & (exitonerror != 0)):
         exit(exitonerror)
 
-def getpassword(description = ""):
-    """
-    Read password (with confirmation)
-    """
-    if (description != ""):
-        sys.stdout.write ("%s\n" % description)
-
-    password1 = getpass.getpass("Password: ");
-    password2 = getpass.getpass("Password (confirm): ");
-
-    if (password1 == password2):
-        return password1
-    else:
-        sys.stdout.write (colors.ORANGE + "[Warning] Password did not match, please try again" + colors.NO + "\n")
-        return getpassword()
-
 def getstring(message = "Enter a value: "):
     """
     Ask user to enter a value
@@ -229,6 +213,7 @@ def doVimstuff(configs):
     instr = configs["vimrc"]["clone"]
     showexec("Cloning the vim settings repo from github...", instr+" $HOME")
     instr = configs["vimrc"]["runit"]
+
 def doCosmostuff(configs):
     # Parse and exec pre-actions
     for cosmo in configs["cosmetics"]:
@@ -240,6 +225,7 @@ def main(argv):
     Main function
     """
     # Parse the input arguments
+    init()
     try:
         opts, args = getopt.getopt(argv, "c:hv", ["config", "help", "version"])
     except getopt.GetoptError:
@@ -345,20 +331,24 @@ def main(argv):
     # End of the script
     note="End of configuration script. Used configuration file: "
     sys.stdout.write(BWHITE+SBRIGHT+FBLACK+note+config_file+" "*(80-len(note)-len(config_file))+"\n")
-
     leftmessage = "Would you like to reboot now?"
     rightmessage = "[ (y)es / (n)o ]"
     sys.stdout.write(QUESTION+"%s"%leftmessage+RESET+CHOICES+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
     if(getChar() == "y"):
         leftmessage = "Rebooting in 3 seconds!"
         rightmessage = "[ REBOOTING ]"
-        sys.stdout.write(OLDQ+"%s"%leftmessage+RESET+SUCCESS+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
-        time.sleep(3)
+        t = 3
+        while t >= 0:
+            leftmessage = "Rebooting in %d seconds!"%t
+            sys.stdout.write(ERROR+"%s"%leftmessage+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
+            sys.stdout.flush()
+            t=t-1
+            time.sleep(1)
         os.system("reboot")
     else:
         leftmessage = "Ok, reboot later."
         rightmessage = "[ REBOOT POSTPONED ]"
-        sys.stdout.write(OLDQ+"%s"%leftmessage+RESET+WARNING+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
+        sys.stdout.write(ERROR+"%s"%leftmessage+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
     sys.stdout.write(RESET+BWHITE+" "*80+RESET)
 
 # Main program

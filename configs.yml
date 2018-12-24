@@ -30,12 +30,12 @@ cosmetics:
     screensaver_primary_color: "gsettings set org.gnome.desktop.screensaver primary_color '#000000'"
     screensaver_secondary_color: "gsettings set org.gnome.desktop.screensaver secondary_color '#000000'"
 
-    set_favorites: "gsettings set org.gnome.shell favorite-apps ['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'atom_atom.desktop', 'org.gnome.Terminal.desktop']"
+    set_favorites: "gsettings set org.gnome.shell favorite-apps \"['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'atom_atom.desktop', 'org.gnome.Terminal.desktop']\""
 
     no_icons: "gsettings set org.gnome.desktop.background show-desktop-icons false"
     scrollbar_policy: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 scrollbar-policy 'never'"
     bold_is_bright: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 bold-is-bright true"
-    background-color: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 background-color 'rgb(26,20,20)'"
+    background-color: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 background-color 'rgb(0,20,20)'"
     cursor_shape: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 cursor-shape 'block'"
 
     default_size_rows: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 default-size-rows 34"
