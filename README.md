@@ -2,7 +2,7 @@
 The purpose of this repository is to provide a collection personal preferences and tools that compose my development environment. Feel free to copy and/or use any/all of this!
 
 ## Automated setup
-I wrote a python script to automate most of the process. The script depends on one non-standard Python 3 package, colorama. You should install this package prior to executing the development configuration program.
+I wrote a python script to automate most of the process. Be sure to install requirements prior to running the script.  
 ### Getting started
 1. Install git, ```sudo apt install git```  
 2. Clone the repository, ```git clone https://github.com/astpierre/dev-config.git```  
