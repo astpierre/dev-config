@@ -14,6 +14,7 @@ import logging
 import getpass
 import yaml
 import colorama
+import time
 from colorama import Fore, Back, Style
 
 # Global variables
@@ -224,6 +225,11 @@ def doVimstuff(configs):
     instr = configs["vimrc"]["clone"]
     showexec("Cloning the vim settings repo from github...", instr+" $HOME")
     instr = configs["vimrc"]["runit"]
+def doCosmostuff(configs):
+    # Parse and exec pre-actions
+    for cosmo in configs["cosmetics"]:
+        # TESTING WITH virtualenv and htop
+        showexec("Configuring "+str(cosmo), configs["cosmetics"][cosmo])
 
 def main(argv):
     """
@@ -316,6 +322,22 @@ def main(argv):
             rightmessage = "[ SKIPPED ]"
             sys.stdout.write(OLDQ+"%s"%leftmessage+RESET+WARNING+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
 
+    if "cosmetics" in configs:
+        # Ask if user wants to do this
+        leftmessage = "Would you like to configure your desktop appearance?"
+        rightmessage = "[ (y)es / (n)o ]"
+        sys.stdout.write(QUESTION+"%s"%leftmessage+RESET+CHOICES+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
+        sys.stdout.flush()
+        if(getChar() == "y"):
+            doCosmostuff(configs)
+            leftmessage = "Desktop appearance successfully configured."
+            rightmessage = "[ DONE ]"
+            sys.stdout.write(OLDQ+"%s"%leftmessage+RESET+SUCCESS+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
+        else:
+            leftmessage = "Desktop appearance left unchanged."
+            rightmessage = "[ SKIPPED ]"
+            sys.stdout.write(OLDQ+"%s"%leftmessage+RESET+WARNING+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
+
     # End of the script
     note="End of configuration script. Used configuration file: "
     sys.stdout.write(BWHITE+SBRIGHT+FBLACK+note+config_file+" "*(80-len(note)-len(config_file))+"\n")
@@ -324,10 +346,11 @@ def main(argv):
     rightmessage = "[ (y)es / (n)o ]"
     sys.stdout.write(QUESTION+"%s"%leftmessage+RESET+CHOICES+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
     if(getChar() == "y"):
-        leftmessage = "Rebooting now!"
+        leftmessage = "Rebooting in 3 seconds!"
         rightmessage = "[ REBOOTING ]"
         sys.stdout.write(OLDQ+"%s"%leftmessage+RESET+SUCCESS+"%s"%rightmessage.rjust(80-len(leftmessage))+RESET)
-        #os.system("reboot")
+        time.sleep(3)
+        os.system("reboot")
     else:
         leftmessage = "Ok, reboot later."
         rightmessage = "[ REBOOT POSTPONED ]"

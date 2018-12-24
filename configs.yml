@@ -1,8 +1,5 @@
 packages:
     - htop
-
-packagestmp:
-    - htop
     - vim
     - build-essential
     - gnome-tweak-tool
@@ -18,6 +15,40 @@ vimrc:
     clone: "git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime"
     runit: "sh ~/.vim_runtime/install_awesome_vimrc.sh"
 
-theme:
-    source: " "
-    action1: "sudo cp -r Downloads/McOS-MJV-Dark-mode-1.1 ../../usr/share/themes/"
+cosmetics:
+    sidebar: "gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'RIGHT'"
+    sidebar_size: "gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 15"
+    desktop_picture_options: "gsettings set org.gnome.desktop.background.picture-options 'zoom'"
+    desktop_color_shading_type: "gsettings set org.gnome.desktop.background color-shading-type 'solid'"
+    desktop_pictureURI: "gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/Milky_Way_before_the_dawn_by_Tomas_Sobek.jpg'"
+    desktop_primary_color: "gsettings set org.gnome.desktop.background primary_color '#000000'"
+    desktop_secondary_color: "gsettings set org.gnome.desktop.background secondary_color '#000000'"
+
+    screensaver_picture_options: "gsettings set org.gnome.desktop.screensaver.picture-options 'zoom'"
+    screensaver_color_shading_type: "gsettings set org.gnome.desktop.screensaver color-shading-type 'solid'"
+    screensaver_pictureURI: "gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/Milky_Way_before_the_dawn_by_Tomas_Sobek.jpg'"
+    screensaver_primary_color: "gsettings set org.gnome.desktop.screensaver primary_color '#000000'"
+    screensaver_secondary_color: "gsettings set org.gnome.desktop.screensaver secondary_color '#000000'"
+
+    set_favorites: "gsettings set org.gnome.shell favorite-apps ['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'atom_atom.desktop', 'org.gnome.Terminal.desktop']"
+
+    no_icons: "gsettings set org.gnome.desktop.background show-desktop-icons false"
+    scrollbar_policy: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 scrollbar-policy 'never'"
+    bold_is_bright: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 bold-is-bright true"
+    background-color: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 background-color 'rgb(26,20,20)'"
+    cursor_shape: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 cursor-shape 'block'"
+
+    default_size_rows: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 default-size-rows 34"
+    default_size_columns: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 default-size-columns 80"
+    cell_height_scale: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 cell-height-scale 1.1500000000000001"
+    visible_name: "gsettings set org.gnome/terminal.legacy.profiles:.:b1dcc9dd-5262-4d8d-a863-c897e6d979b9 visible-name 'asaintp'"
+    edge_tiling: "gsettings set org.gnome.mutter edge-tiling true"
+    attach-modal-dialogs: "gsettings set org.gnome.mutter attach-modal-dialogs true"
+    new_window_centering: "gsettings set org.gnome.mutter center-new-windows true"
+    button_layout: "gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize,appmenu'"
+    clock_seconds: "gsettings set org.gnome.desktop.interface clock-show-seconds true"
+    clock_date: "gsettings set org.gnome.desktop.interface clock-show-date true"
+    clock_weekday: "gsettings set org.gnome.desktop.interface clock-show-weekday true"
+    icon_theme: "gsettings set org.gnome.desktop.interface icon-theme 'ubuntu-mono-dark'"
+    gtk_theme: "gsettings set org.gnome.desktop.interface gtk-theme 'McOS-MJV-Dark-XFCE-Edition-2.3'"
+    cursor_theme: "gsettings set org.gnome.desktop.interface cursor-theme 'DMZ-Black'"
