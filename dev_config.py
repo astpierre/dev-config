@@ -17,7 +17,7 @@ from colorama import Fore, Back, Style
 
 # Global variables
 #-----------------------------------------------------------------------------
-VERSION = "1.2.1"
+VERSION = "2.2.1"
 OPTIONS_FILE = "configs.yml"
 
 # System commands
@@ -184,7 +184,6 @@ def doPackages(configs):
     if "packages" in configs:
         # Parse and exec pre-actions
         for pckg in configs["packages"]:
-            # TESTING WITH virtualenv and htop
             command_install = _APT_INSTALL+" "+pckg
             showexec("Install package "+pckg, command_install)
 
@@ -211,8 +210,9 @@ def doDotfiles(configs):
 def doVimstuff(configs):
     # Clone the vimrc settings into home dir
     instr = configs["vimrc"]["clone"]
-    showexec("Cloning the vim settings repo from github...", instr+" $HOME")
+    showexec("Cloning the vim settings repo from github...", instr)
     instr = configs["vimrc"]["runit"]
+    showexec("Running install_awesome_vimrc.sh...", instr)
 
 def doCosmostuff(configs):
     # Parse and exec pre-actions
